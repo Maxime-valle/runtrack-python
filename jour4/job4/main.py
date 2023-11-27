@@ -1,10 +1,19 @@
-def fruits():
-   
-    fruits = ['pomme', 'cerise', 'orange',"Melon"]
-    fruits.insert(2 , 'Mangue')
-    return fruits
-  
+def chiffrement_cesar(message, decalage):
+    alphabet = 'abcdefghijklmnopqrstuvwxyz'
+    message_chiffre = ''
 
-print(fruits())
+    for lettre in message:
+        if lettre in alphabet:
+           
+            index = (alphabet.index(lettre) + decalage) % len(alphabet)
+            message_chiffre += alphabet[index]
+        else:
+            message_chiffre += lettre
+
+    return message_chiffre
+
+message = input("Veuillez entrer le message à chiffrer : ")
+decalage = int(input("Veuillez entrer le décalage : "))
+print(chiffrement_cesar(message, decalage))
 
    

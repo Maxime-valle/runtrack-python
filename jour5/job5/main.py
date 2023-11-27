@@ -4,7 +4,7 @@ def chiffrement_cesar(message, decalage):
 
     for lettre in message:
         if lettre in alphabet:
-           
+            
             index = (alphabet.index(lettre) + decalage) % len(alphabet)
             message_chiffre += alphabet[index]
         else:
@@ -12,8 +12,8 @@ def chiffrement_cesar(message, decalage):
 
     return message_chiffre
 
+
 message = input("Veuillez entrer le message à chiffrer : ")
 decalage = int(input("Veuillez entrer le décalage : "))
 print(chiffrement_cesar(message, decalage))
     
-
